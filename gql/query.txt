@@ -1,6 +1,7 @@
 // Primera prueba de solo paso de datos
 mutation register($input: UserInput) {
   register(input: $input) {
+    id
     name
     username
     email
