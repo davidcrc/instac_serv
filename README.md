@@ -8,6 +8,8 @@
 - yarn add mongoose
 - yarn add dotenv
 - yarn add apollo-server
+- yarn add bcryptjs
+- yarn add nodemon --dev
 
 
 # Env
