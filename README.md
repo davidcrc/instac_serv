@@ -10,7 +10,9 @@
 - yarn add apollo-server
 - yarn add bcryptjs
 - yarn add nodemon --dev
+- yarn add jsonwebtoken
 
 
 # Env
 BBDD=URL que viene de la BD mongodb# instac
+SECRET_KEY=SECRET
