@@ -1,0 +1,19 @@
+// Primera prueba de solo paso de datos
+mutation register($input: UserInput) {
+  register(input: $input) {
+    name
+    username
+    email
+    password
+  }
+}
+
+
+{
+  "input":{
+    "name": "Augutito",
+    "username": "augus20",
+    "email": "augus@hot.com",
+    "password": "123"
+  }
+}
