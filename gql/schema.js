@@ -14,10 +14,18 @@ const typeDefs = gql`
         createdAt: String
     }
 
+    type Token {
+        token: String
+    }
+
     # Datos que puede recibir
     input UserInput {
         name: String!
         username: String!
+        email: String!
+        password: String!
+    }
+    input LoginInput {
         email: String!
         password: String!
     }
@@ -32,6 +40,7 @@ const typeDefs = gql`
     type Mutation {
         # User
         register(input: UserInput): User
+        login(input: LoginInput): Token
     }
 `;
 

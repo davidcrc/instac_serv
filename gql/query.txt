@@ -18,3 +18,17 @@ mutation register($input: UserInput) {
     "password": "123"
   }
 }
+
+// Datos login
+mutation login($input: LoginInput) {
+  login(input: $input) {
+   token
+  }
+}
+
+{
+  "input":{
+    "email": "augus@hot.com",
+    "password": "123"
+  }
+}

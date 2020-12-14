@@ -8,7 +8,9 @@ const resolver = {
     Mutation: {
         
         // Params: _, el body , los headers
-        register: async (_, {input}, conext) => userController.register(input)
+        register: (_, {input}, conext) => userController.register(input),
+        login: (_,{input}, context) => userController.login(input),
+
     }
 }
 

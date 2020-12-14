@@ -50,7 +50,15 @@ async function getUser(){
     return null;
 }
 
+async function login(input){
+    const {email, password} = input
+
+    console.log("Login email ", email)
+    console.log("Login pass ", password)
+}
+
 module.exports = {
     register,
-    getUser
+    getUser,
+    login
 }
