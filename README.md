@@ -7,6 +7,7 @@
 
 - yarn add mongoose
 - yarn add dotenv
+- yarn add apollo-server
 
 
 # Env
