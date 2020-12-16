@@ -3,7 +3,7 @@
 - yarn dev o npm run dev
 
 
-# Pauqetes
+# Paquetes
 
 - yarn add mongoose
 - yarn add dotenv
