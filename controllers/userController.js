@@ -50,9 +50,9 @@ async function register(input){
         console.log(error)
     }
 
-    console.log(newUser);
+    // console.log(newUser);
 
-    return input;
+    // return input;
 }
 
 async function getUser(){
