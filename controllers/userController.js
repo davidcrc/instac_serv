@@ -55,10 +55,22 @@ async function register(input){
     // return input;
 }
 
-async function getUser(){
+async function getUser(id, username){
 
-    console.log("Obtener usuario")
-    return null;
+    let user = null;
+
+    if(id){
+        user = await User.findById(id);
+    }
+    if(username){
+        user = await User.findOne({username});
+    }
+
+    if(!user){
+        throw new Error("usuario no existe");
+    }
+
+    return user;
 }
 
 async function login(input){

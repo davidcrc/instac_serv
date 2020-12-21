@@ -32,3 +32,24 @@ mutation login($input: LoginInput) {
     "password": "123"
   }
 }
+
+// Obtener usuario por id
+
+query getUser($id: ID, $username: String) {
+  getUser(id: $id, username: $username) {
+    id
+    name
+    username
+    email
+    sitioWeb
+    descripcion
+    avatar
+    createdAt
+  }
+}
+
+
+{
+  "id": "",
+  "username": "pparaisop"
+}

@@ -33,7 +33,7 @@ const typeDefs = gql`
     # Sirven como GETS
     type Query {
         # User
-        getUser: User
+        getUser(id: ID, username: String): User
     }
 
     # Sirven como POST
