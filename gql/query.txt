@@ -53,3 +53,12 @@ query getUser($id: ID, $username: String) {
   "id": "",
   "username": "pparaisop"
 }
+
+// Guardar avatar
+
+mutation updateAvatar($file: Upload) {
+    updateAvatar(file: $file) {
+        status,
+        urlAvatar
+    }
+}
