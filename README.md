@@ -53,3 +53,7 @@ SECRET_KEY=SECRET
         }
     ]
     }
+
+ - Crear credenciales para la apliacion:
+    -- Ir a CUENTA => Mis credneciales de seguridad => Usuarios : Crear un usuario con acceso mediante programacion
+    -- En permisos: Asociar directamente las políticas existentes => { AdministratorAccess  }, listo ahora crear.
