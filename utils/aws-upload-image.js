@@ -7,7 +7,7 @@ const SECRET = process.env.AWS_SECRET;
 const BUCKET_NAME = process.env.AWS_BUCKET_NAME;
 
 const s3 = new AWS.S3({
-    accessKey: ID,
+    accessKeyId: ID,
     secretAccessKey: SECRET
 })
 
