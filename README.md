@@ -12,6 +12,7 @@
 - yarn add nodemon --dev
 - yarn add jsonwebtoken
 
+- yarn add aws-sdk          // Conectar a AWS bucket
 
 # Env
 BBDD=URL que viene de la BD mongodb# instac
