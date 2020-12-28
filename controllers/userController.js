@@ -103,7 +103,7 @@ async function login(input){
     };
 }
 
-async function updateAvatar(file){
+async function updateAvatar(file, ctx){
     // console.log(file)
     const { createReadStream, mimetype } = await file;
 
@@ -113,7 +113,6 @@ async function updateAvatar(file){
     const imageName = `avatar/avt.${extension}`;
     // console.log(imageName)
     const fileData = createReadStream();
-
     try {
         const result = await awsUploadImage(fileData, imageName);       // Aqui se sube realmente
         console.log(result)
