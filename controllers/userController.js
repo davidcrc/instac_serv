@@ -110,7 +110,6 @@ async function updateAvatar(file, ctx){
 
     const extension = mimetype.split("/")[1];
 
-    // TODO: Recibir el id del usuario para añadirlo al nombre
     const imageName = `avatar/${id}.${extension}`;
     // console.log(imageName)
     const fileData = createReadStream();
