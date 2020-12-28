@@ -105,27 +105,30 @@ async function login(input){
 
 async function updateAvatar(file, ctx){
     // console.log(file)
+    const { id } = ctx.user;
     const { createReadStream, mimetype } = await file;
 
     const extension = mimetype.split("/")[1];
 
     // TODO: Recibir el id del usuario para añadirlo al nombre
-    const imageName = `avatar/avt.${extension}`;
+    const imageName = `avatar/${id}.${extension}`;
     // console.log(imageName)
     const fileData = createReadStream();
     try {
         const result = await awsUploadImage(fileData, imageName);       // Aqui se sube realmente
-        console.log(result)
-        // return {
-        //     status: true,
-        //     urlAvatar: result
-        // }
+        // console.log(result)
+        return {
+            status: true,
+            urlAvatar: result
+        }
     } catch (error) {
         return {
             status: false,
             urlAvatar: null
         }
     }
+    // console.log("ejecutando update avatar")
+    // console.log(ctx)
     // return null;
 }
 
