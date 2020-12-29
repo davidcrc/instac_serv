@@ -134,9 +134,22 @@ async function updateAvatar(file, ctx){
     // return null;
 }
 
+async function deleteAvatar(ctx){
+    const { id } = ctx.user;
+
+    try {
+        await User.findByIdAndUpdate(id, {avatar: ""})
+
+        return true;
+    } catch (error) {
+        console.log("err delAvt", error)       
+    }
+}
+
 module.exports = {
     register,
     getUser,
     login,
-    updateAvatar
+    updateAvatar,
+    deleteAvatar,
 }

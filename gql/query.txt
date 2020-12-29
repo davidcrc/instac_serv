@@ -62,3 +62,14 @@ mutation updateAvatar($file: Upload) {
         urlAvatar
     }
 }
+
+// Delete avatar
+
+mutation deleteAvatar {
+  deleteAvatar
+}
+
+-- HTTP HEADERS:
+{
+  "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjVmZGI3OTRhMzZhYTY2MjNmMDA0YzY5OCIsIm5hbWUiOiJEYXZpZCBDYXJwaW8gUi4iLCJlbWFpbCI6ImFzaWVzcHMxNDdAZ21haWwuY29tIiwidXNlcm5hbWUiOiJwcGFyYWlzb3AiLCJpYXQiOjE2MDkyNTY3NDgsImV4cCI6MTYwOTM0MzE0OH0.ByYsQ-t146vVESWZX9Psq0twdzmSxxqYGpIrUxQNwDE"
+}

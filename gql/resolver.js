@@ -10,7 +10,8 @@ const resolver = {
         // Params: _, el body , los headers
         register: (_, {input}, conext) => userController.register(input),
         login: (_,{input}, context) => userController.login(input),
-        updateAvatar: (_, {file}, ctx) => userController.updateAvatar(file, ctx)
+        updateAvatar: (_, {file}, ctx) => userController.updateAvatar(file, ctx),
+        deleteAvatar: (_, {}, ctx) => userController.deleteAvatar(ctx),
 
     }
 }
