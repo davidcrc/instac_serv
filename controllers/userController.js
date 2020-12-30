@@ -174,7 +174,8 @@ async function updateUser(input, ctx) {
 
         }
         else{
-            await User.findByIdAndUpdate(id, { input })
+            // console.log("Actualizando....", id)
+            await User.findByIdAndUpdate(id, input)
         }
 
         return true;
