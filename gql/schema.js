@@ -35,6 +35,17 @@ const typeDefs = gql`
         password: String!
     }
 
+    # Una sola funcion que reciba los datos necesarios para actualizar
+    # deacuerdo al usuario
+    input UserUpdateInput {
+        name: String
+        email: String
+        currentPassword: String
+        newPassword: String
+        sitioWeb: String
+        descripcion: String
+    }
+
     # Sirven como GETS
     type Query {
         # User
@@ -48,6 +59,7 @@ const typeDefs = gql`
         login(input: LoginInput): Token
         updateAvatar(file: Upload): UpdateAvatar        # Upload: ya definido por react 
         deleteAvatar: Boolean
+        updateUser(input: UserUpdateInput): Boolean
     }
 `;
 
