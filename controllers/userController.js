@@ -186,6 +186,16 @@ async function updateUser(input, ctx) {
     }
 }
 
+async function search(search) {
+
+    // Buscar por parecidos que inicien con la misma letra
+    const users = await User.find({
+        name: {$regex: search, $options: "i"}
+    })
+
+    return users;
+}
+
 module.exports = {
     register,
     getUser,
@@ -193,4 +203,5 @@ module.exports = {
     updateAvatar,
     deleteAvatar,
     updateUser,
+    search,
 }

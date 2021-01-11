@@ -91,3 +91,19 @@ mutation updateUser($input: UserUpdateInput){
 {
   "Authorization": "Bearer TOKEN"
 }
+
+
+// Buscar usuarios
+
+query search($search: String) {
+  search(search: $search) {
+    name
+    username
+    avatar
+  }
+}
+
+
+{
+  "search": "dav"
+}
