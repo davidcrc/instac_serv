@@ -86,8 +86,37 @@ async function unFollow(id, username, ctx) {
 
 }
 
+async function getFollowers(id, username, ctx) {
+    
+    let userFound = null;
+
+    if(id){
+        userFound = await User.findById(id);
+    }
+    if(username){
+        userFound = await User.findOne({username});
+    }
+
+    if(!userFound){
+        throw new Error("usuario no encontrado");
+    }
+
+    const followers = await Follow.find( {follow: userFound._id}).populate("idUser");       // solo escoge idUser con sus datos
+    // console.log(followers);
+
+    // CHECK: Como devolver datos de de un populate
+    const followersList = [];
+    for await (const data of followers) {
+        followersList.push(data.idUser);
+    }
+
+    return followersList;
+
+}
+
 module.exports = {
     follow,
     isFollow,
     unFollow,
+    getFollowers,
 }

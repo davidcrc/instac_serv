@@ -9,6 +9,7 @@ const resolver = {
 
         // Follow
         isFollow: (_, {id, username}, ctx) => followController.isFollow(id, username, ctx),
+        getFollowers: (_, {id, username}, ctx) => followController.getFollowers(id, username, ctx),
     },
     Mutation: {
         // -- User
