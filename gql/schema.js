@@ -67,6 +67,7 @@ const typeDefs = gql`
 
         #Follow
         follow(id: ID, username: String!): Boolean
+        unFollow(id: ID, username: String!): Boolean
     }
 `;
 

@@ -18,6 +18,13 @@ async function follow(id, username, ctx) {
         throw new Error("usuario no existe");
     }
 
+    // VIEW: Mi aporte
+    let isFollowUser = await isFollow(id, username, ctx)
+
+    if(isFollowUser) {
+        return true;
+    }
+
     try {
         const follow = new Follow({
             idUser: ctx.user.id,
@@ -44,7 +51,7 @@ async function isFollow(id, username, ctx) {
     if(username){
         userFound = await User.findOne({username});
     }
-    
+
     if(!userFound){
         throw new Error("usuario no encontrado");
     }
@@ -53,12 +60,34 @@ async function isFollow(id, username, ctx) {
         .where("follow")                    // en su objeto es igual a...
         .equals(userFound._id)
 
-    if(follow.length > 0) return true;
+    return (follow.length > 0) ? true : false ;
+}
 
-    return false;
+async function unFollow(id, username, ctx) {
+
+    let userFound = null;
+
+    if(id){
+        userFound = await User.findById(id);
+    }
+    if(username){
+        userFound = await User.findOne({username});
+    }
+
+    if(!userFound){
+        throw new Error("usuario no existe");
+    }
+
+    const follow = await Follow.deleteOne({idUser: ctx.user.id})
+        .where("follow")                    // en su objeto es igual a...
+        .equals(userFound._id)
+
+    return (follow.deletedCount > 0) ? true : false;
+
 }
 
 module.exports = {
     follow,
-    isFollow
+    isFollow,
+    unFollow,
 }

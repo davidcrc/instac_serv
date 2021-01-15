@@ -20,7 +20,8 @@ const resolver = {
         updateUser:(_, {input}, ctx) => userController.updateUser(input, ctx),
 
         // -- Follow
-        follow: (_, {id, username}, ctx) => followController.follow(id, username, ctx)
+        follow: (_, {id, username}, ctx) => followController.follow(id, username, ctx),
+        unFollow: (_, {id, username}, ctx) => followController.unFollow(id, username, ctx),
     }
 }
 

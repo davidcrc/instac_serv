@@ -136,3 +136,17 @@ query isFollow($username: String!) {
 {
   "Authorization": "Bearer TOKEN"
 }
+
+// Dejar de Seguir
+
+mutation unFollow($username: String!){
+  unFollow( username: $username)
+}
+
+{
+  "username": "aaa"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}
