@@ -61,6 +61,9 @@ const typeDefs = gql`
         updateAvatar(file: Upload): UpdateAvatar        # Upload: ya definido por react 
         deleteAvatar: Boolean
         updateUser(input: UserUpdateInput): Boolean
+
+        #Follow
+        follow(id: ID, username: String!): Boolean
     }
 `;
 

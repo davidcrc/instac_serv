@@ -107,3 +107,18 @@ query search($search: String) {
 {
   "search": "dav"
 }
+
+
+// Seguir a otro usuario
+
+mutation follow($username: String!){
+  follow(   username: $username)
+}
+
+{
+  "username": "admin"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}
