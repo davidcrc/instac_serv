@@ -122,3 +122,17 @@ mutation follow($username: String!){
 {
   "Authorization": "Bearer TOKEN"
 }
+
+// Si usuario sigue a otro
+
+query isFollow($username: String!) {
+  isFollow(username: $username)
+}
+
+{
+  "username": "aaa"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}

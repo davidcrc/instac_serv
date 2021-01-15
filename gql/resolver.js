@@ -6,6 +6,9 @@ const resolver = {
         // User
         getUser: (_, {id, username}) => userController.getUser(id, username),
         search: (_, {search}) => userController.search(search),
+
+        // Follow
+        isFollow: (_, {id, username}, ctx) => followController.isFollow(id, username, ctx),
     },
     Mutation: {
         // -- User

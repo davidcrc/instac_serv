@@ -34,6 +34,31 @@ async function follow(id, username, ctx) {
     }
 }
 
+async function isFollow(id, username, ctx) {
+    
+    let userFound = null;
+
+    if(id){
+        userFound = await User.findById(id);
+    }
+    if(username){
+        userFound = await User.findOne({username});
+    }
+    
+    if(!userFound){
+        throw new Error("usuario no encontrado");
+    }
+
+    const follow = await Follow.find({ idUser: ctx.user.id })
+        .where("follow")                    // en su objeto es igual a...
+        .equals(userFound._id)
+
+    if(follow.length > 0) return true;
+
+    return false;
+}
+
 module.exports = {
-    follow
+    follow,
+    isFollow
 }
