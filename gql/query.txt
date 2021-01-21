@@ -150,3 +150,40 @@ mutation unFollow($username: String!){
 {
   "Authorization": "Bearer TOKEN"
 }
+
+// Obtener todos los seguidores
+
+query getFollowers($username: String!){
+  getFollowers(username: $username){
+    username
+    name
+    avatar
+  }
+}
+
+{
+  "username": "admin"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}
+
+
+// Obtener todos los seguidos
+
+query getFolloweds($username: String!){
+  getFolloweds(username: $username){
+    username
+    name
+    avatar
+  }
+}
+
+{
+  "username": "admin"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}

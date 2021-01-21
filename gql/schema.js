@@ -55,6 +55,7 @@ const typeDefs = gql`
         # Follow
         isFollow(username: String!): Boolean
         getFollowers(id: ID, username: String!): [User]
+        getFolloweds(id: ID, username: String!): [User]
     }
 
     # Sirven como POST
