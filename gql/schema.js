@@ -23,6 +23,11 @@ const typeDefs = gql`
         urlAvatar: String
     }
 
+    type Publish {
+        status: Boolean
+        urlFile: String
+    }
+
     # Datos que puede recibir
     input UserInput {
         name: String!
@@ -70,6 +75,9 @@ const typeDefs = gql`
         #Follow
         follow(id: ID, username: String!): Boolean
         unFollow(id: ID, username: String!): Boolean
+
+        # Publication
+        publish(file: Upload): Publish
     }
 `;
 
