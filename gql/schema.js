@@ -28,6 +28,14 @@ const typeDefs = gql`
         urlFile: String
     }
 
+    type Publication {
+        id: ID
+        idUser: ID
+        file: String
+        typeFile: String
+        createdAt: String
+    }
+
     # Datos que puede recibir
     input UserInput {
         name: String!
@@ -61,6 +69,10 @@ const typeDefs = gql`
         isFollow(username: String!): Boolean
         getFollowers(id: ID, username: String!): [User]
         getFolloweds(id: ID, username: String!): [User]
+
+        # Publish
+        getPublications(id: ID, username: String!): [Publication]
+
     }
 
     # Sirven como POST

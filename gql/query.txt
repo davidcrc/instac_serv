@@ -187,3 +187,23 @@ query getFolloweds($username: String!){
 {
   "Authorization": "Bearer TOKEN"
 }
+
+// Obtener las publicaciones de un usuario 
+
+query getPublications($username: String!) {
+  getPublications(username: $username) {
+    id
+    idUser
+    file
+    typeFile
+    createdAt
+  }
+}
+
+{
+  "username": "pparaisop"
+}
+
+{
+  "Authorization": "Bearer TOKEN"
+}
