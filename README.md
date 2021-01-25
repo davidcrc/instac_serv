@@ -13,6 +13,7 @@
 - yarn add jsonwebtoken
 
 - yarn add aws-sdk          // Conectar a AWS bucket
+- yarn add uuid             // generar ids unicas para publish aws
 
 # Env
 BBDD=URL que viene de la BD mongodb# instac
